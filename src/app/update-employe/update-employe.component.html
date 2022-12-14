@@ -1,0 +1,42 @@
+<div class="container">
+    <div>
+        <h2>Modifier un Employe :</h2>
+    </div>
+    <form>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Employe</label>
+            <input readonly type="text" [(ngModel)]="currentEmploye.idEmp" name="idEmploye" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Employe</label>
+            <input type="text" [(ngModel)]="currentEmploye.nom" name="nomEmploye" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Prenom</label>
+            <input type="text" [(ngModel)]="currentEmploye.prenom" name="prenomEmploye" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Cin</label>
+            <input type="text" [(ngModel)]="currentEmploye.cin" name="cinEmploye" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Service</label>
+            <input type="text" [(ngModel)]="currentEmploye.service" name="service" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date Naissance</label>
+            <input type="date" [ngModel]="currentEmploye.dateNaiss | date: 'yyyy-MM-dd'" (ngModelChange)=" currentEmploye.dateNaiss= $event" name="dateCreation" class="form-control"> </div>
+        <div class="mt-2">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <label>Societe</label>
+                <select class="form-control form-control-lg" id="idSoc" name="idSoc" [(ngModel)]="updatedSocId">
+                <option *ngFor="let soc of societes" [value]="soc.idSociete">
+                {{soc.nomS}}
+                </option>
+                </select>
+            </div>
+            <br>
+            <button type="submit" (click)="updateEmploye()" class="btn btn-success">Modifier</button>
+        </div>
+    </form>
+</div>

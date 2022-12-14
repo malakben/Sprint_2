@@ -1,0 +1,77 @@
+<br>
+
+<div class="container" id="main-container">
+    <div class="panel panel-default">
+        <!-- <form class="form-inline">
+            <div class="form-group mx-sm-3 mb-2 mt-2 ">
+                <label>Nom Employe en tapant</label>
+                <input #nom [(ngModel)]="searchTerm" name="searchTerm" class="form-control">
+            </div>
+        </form>-->
+
+        <form class="form-inline">
+            <div class="form-group mx-sm-3 mb-2 mt-2 ">
+                <label>Nom Employe en tapant</label>
+                <br>
+                <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)">
+            </div>
+        </form>
+        <!--
+
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+            <label>Nom Emlpoye</label>
+            <input type="text" class="form-control" [(ngModel)]="nomEmploye" name="nomEmploye" class="form-control">
+            <button type="submit" (click)="rechercherEmp()" class="btn btn-primary mb-2 ml-2">Rechercher</button>
+        </div>
+    </form>-->
+        <!-- Default panel contents -->
+
+        <br>
+        <div class="container">
+            <form>
+
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Id</th>
+                                <th>Nom</th>
+                                <th>Prenom</th>
+                                <th>CIN</th>
+                                <th>Service</th>
+                                <th>Date Naissance</th>
+                                <th>Societe</th>
+                            </tr>
+                            <tbody *ngFor="let employe of employes">
+                                <tr>
+                                    <td>{{employe.idEmp}}</td>
+                                    <td>{{employe.nom}}</td>
+                                    <td>{{employe.prenom}}</td>
+                                    <td>{{employe.cin}}</td>
+                                    <td>{{employe.service}}</td>
+                                    <td>{{employe.dateNaiss | date:'dd/MM/yyyy'}}</td>
+                                    <td>{{employe.societe?.nomS}}</td>
+                                    <td></td>
+                                    <!--
+                                    <td>
+                                        <a class="btn btn-danger" (click)="supprimerEmploye(employe)">Supprimer</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-success" [routerLink]="['/updateEmploye',employe.idEmp]"> Modifier</a>
+                                    </td>-->
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<!---->
+<!---->

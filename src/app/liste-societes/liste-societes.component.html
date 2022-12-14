@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+        <app-update-categorie [societe]="updateSociete" [ajout]="ajout" (societeUpdated)="societeisUpdated($event)">
+        </app-update-categorie>
+    </div>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom Societes</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let soc of societes">
+                    <tr>
+                        <td>{{soc.idSociete}}</td>
+                        <td>{{soc.nomS}}</td>
+                        <td>{{soc.description}} </td>
+                        <td><a class="btn btn-success" (click)="updateSoc(soc)">Editer</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

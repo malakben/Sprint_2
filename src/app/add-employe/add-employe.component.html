@@ -1,0 +1,46 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un Employe :</h2>
+    </div>
+    <form>
+        <div hidden class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Employe</label>
+            <input type="text" [(ngModel)]="newEmploye.idEmp" formcontrolname="idEmploye" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Employe</label>
+            <input type="text" [(ngModel)]="newEmploye.nom" name="nomEmploye" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Prenom</label>
+            <input type="text" [(ngModel)]="newEmploye.prenom" name="prenomEmploye" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Cin</label>
+            <input type="text" [(ngModel)]="newEmploye.cin" name="cinEmploye" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Service</label>
+            <input type="text" [(ngModel)]="newEmploye.service" name="service" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date Naissance</label>
+            <input type="date" [(ngModel)]="newEmploye.dateNaiss" name="dateNaiss" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Societe</label>
+            <select class="form-control form-control-lg" id="idSociete" name="idSociete" [(ngModel)]="newIdSociete">
+             <option *ngFor="let soc of societes" [value]="soc.idSociete" >
+             {{soc.nomS}}
+            </option>
+            </select>
+        </div>
+        <div class="mt-2">
+            <button type="submit" (click)="addEmploye()" class="btn btn-success">Ajouter</button>
+            <div>
+                <h3>{{message}}</h3>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,17 @@
+<form>
+    <div [hidden]="ajout">
+        <label>ID Societe</label>
+        <input [readonly]="!ajout" ype="text" [(ngModel)]="societe.idSociete" name="idSociete" class="form-control w-25">
+    </div>
+    <div>
+        <label>Nom Societe</label>
+        <input type="text" [(ngModel)]="societe.nomS" name="nomS" class="form-control" placeholder="Entrez un nom de catégorie...">
+    </div>
+    <div>
+        <label>Nom Societe</label>
+        <input type="text" [(ngModel)]="societe.description" name="description" class="form-control" placeholder="Entrez un nom de catégorie...">
+    </div>
+    <div class="mt-2">
+        <button type="submit" [disabled]="!societe.nomS" class="btn btn-success" (click)="saveSociete()">{{ajout ? 'Ajouter' : 'Modifier'}}</button>
+    </div>
+</form>
